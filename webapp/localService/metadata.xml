@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZTA_NM_SIGN_FILES_SRV" xml:lang="ru" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="File" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="FileName"/>
+                </Key>
+                <Property Name="FileName" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MIMEType" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SupportID" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="MsgId"/>
+                </Key>
+                <Property Name="MsgId" Type="Edm.String" Nullable="false" MaxLength="11" sap:unicode="false" sap:label="НомСообщенияПоддержк" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Created" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Дата создания" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dtlimit" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Ср.подготовки ответа" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dclcode" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Код декларации" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Repcode" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Код регистра" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Creator" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Имя пользов." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZTA_NM_SIGN_FILES_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="FileSet" EntityType="ZTA_NM_SIGN_FILES_SRV.File" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SupportIDSet" EntityType="ZTA_NM_SIGN_FILES_SRV.SupportID" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="https://SGZSMD02.SEGEZHA-GROUP.COM:44301/sap/opu/odata/sap/ZTA_NM_SIGN_FILES_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://SGZSMD02.SEGEZHA-GROUP.COM:44301/sap/opu/odata/sap/ZTA_NM_SIGN_FILES_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

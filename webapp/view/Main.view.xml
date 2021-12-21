@@ -1,0 +1,42 @@
+<mvc:View
+    controllerName="segezhsignfiles.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+                        <Table items="{path:'/SupportID', templateShareable:false}">
+                            <headerToolbar>
+                                <OverflowToolbar design="Transparent">
+                                    <content>
+                                        <Title textAlign="Begin" text="Движения СП"/>
+                                        
+                                    </content>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column><Label text='1'/></Column>
+                               <Column><Label text='2'/></Column>
+                                
+                                
+                            </columns>
+                            <items>
+                                <ColumnListItem type="Navigation" vAlign="Middle">
+                                    <cells>
+                                        <Label text="{ID_MOVEMENT}"/>
+                                        <Label text="{ID_PACKTOOL_FULL}"/>
+                                        
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
